@@ -3,7 +3,6 @@ const router = express.Router();
 const passport = require("passport");
 const User = require("../models/user");
 const { isLoggedIn } = require("../middleware/auth");
-const Activity = require("../models/activity");
 
 
 // 🌍 Home Page

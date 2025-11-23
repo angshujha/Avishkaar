@@ -9,22 +9,30 @@ const path = require("path");
 const User = require("./models/user");
 const userRoutes= require("./routes/user")
 
+const MongoStore=require("connect-mongo");
+const ejslayouts = require("express-ejs-layouts"); // FIXED
 
 dotenv.config();
 const app = express();
 
-
-  
+// Session Store
 const store = MongoStore.create({
   mongoUrl: process.env.MONGO_URI,
-  touchAfter: 24 * 60 * 60,
-  crypto: {
-    secret: process.env.SESSION_SECRET   // FIXED
-  }
+  collectionName: "sessions",
 });
-store.on('error', function(e){
-  console.log('SESSION STORE ERROR', e);
+store.on("error", (e) => {
+  console.log("SESSION STORE ERROR:", e);
 });
+
+// Sessions 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: store,
+  })
+);
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log(" MongoDB Connected"))
@@ -42,13 +50,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-// Sessions + Flash
-app.use(session({
-  store:store,
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-}));
+// Flash
+
 app.use(flash());
 
 // Passport Setup

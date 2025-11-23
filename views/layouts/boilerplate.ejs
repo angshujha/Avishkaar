@@ -35,8 +35,8 @@
     
     <link rel="stylesheet" href="/css/profile.css">
     
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/chatbox.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
   
 
     <% if (pageCSS && pageCSS.length) { %>
@@ -49,15 +49,15 @@
 
 <body>
 
-   <!-- <%- include("../partials/header.ejs") %>
+   <%- include("../includes/navbar.ejs")%>
+    <div class="container"><%-body%></div>
 
-    <div class="container">
+    <!-- <div class="container">
       <%- include("../partials/flash.ejs") %>
       <%- body %>
     </div> -->
 
-    <!-- <%- include("../partials/chatbox.ejs") %>
-    <%- include("../partials/footer.ejs") %> -->
+    <%- include("../includes/footer.ejs")%>
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
