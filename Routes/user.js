@@ -38,7 +38,7 @@ router.post("/register", (req, res) => {
       }
 
       // 2. Create user document (NO password here)
-      const user = new User({ email, username });
+      const user = new User({ email});
 
       // 3. Use passport-local-mongoose register with CALLBACK
       User.register(user, password, (err, registeredUser) => {
@@ -101,7 +101,7 @@ router.get("/profile", isLoggedIn, async (req, res) => {
 
     const totals = {
       emitted: activities.reduce((sum, a) => sum + (a.co2 || 0), 0),
-      saved: 25.4 // (temporary static value)
+      saved: 25.4 
     };
 
     res.render("users/profile", {
