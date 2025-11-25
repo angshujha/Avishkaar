@@ -1,0 +1,23 @@
+<% pageCSS = ['contact']; %>
+<div class="container">
+    
+    <div class="card">
+        <h1>Contact Us</h1>
+        <p class="subtitle">Have questions, feedback, or need help?<br>We’re here for you 24/7.</p>
+
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message (e.g., QR not working, need help uploading PDF...)" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Thank you! Your message has been sent. We'll reply within 24 hours.");
+        this.reset();
+    });
+</script>

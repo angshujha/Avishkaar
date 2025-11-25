@@ -68,9 +68,10 @@
     const path = window.location.pathname;
 
     // Hide navbar & footer on login and register pages
-    if (path === "/login" || path === "/register") {
+    if (path === "/login" || path === "/register"|| path==="/contact") {
         document.querySelector("nav")?.remove();
         document.querySelector("footer")?.remove();
+        document.querySelector("#chatbox")?.remove();
     }
 </script>
 

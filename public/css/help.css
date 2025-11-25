@@ -1,95 +1,130 @@
-:root {
-            --color-card-bg: #ffffff;
-            --color-card-border: #e5e5e5;
-            --color-primary: #2c3e50;
-            --color-text-header: #1e1e1e;
-            --color-text-body: #555;
-            --color-text-muted: #949494;
-        }
+/* PAGE BACKGROUND */
+body {
+    background: #f5f8fc;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
+/* MAIN CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: 120px auto 60px;
+    padding: 20px;
+}
 
-        .container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* HEADER – match About/Profile */
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
 
-        .content-card {
-            background: var(--color-card-bg);
-            border: 1px solid var(--color-card-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            width: 100%;
-            max-width: 550px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
+.header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #003366;
+}
 
-        .mission-title {
-            color: var(--color-primary);
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+.header p {
+    margin-top: 8px;
+    color: #555;
+    font-size: 18px;
+}
 
-        .mission-text {
-            color: var(--color-text-body);
-            font-size: 15px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+/* SEARCH BOX – upgraded (rounded, shadow, modern) */
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #d1d5db;
+    padding: 14px 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
 
-        .content-title {
-            color: var(--color-text-header);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+.search-box input {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+}
 
-        .content-text {
-            color: var(--color-text-body);
-            font-size: 14px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+/* GRID – clean consistent spacing */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 10px;
-        }
+/* SUPPORT CARDS – match About/Contact/Profile card style */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-top: 4px solid #007bff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    transition: 0.25s ease;
+}
 
-        .input-field,
-        .textarea-field {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid var(--color-card-border);
-            font-size: 14px;
-            outline: none;
-            color: #333;
-        }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+}
 
-        .textarea-field {
-            height: 120px;
-            resize: none;
-        }
+/* CARD ICON */
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    color: #007bff;
+}
 
-        .submit-btn {
-            padding: 12px;
-            background: var(--color-primary);
-            color: white;
-            font-size: 15px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+/* CARD TITLE */
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 6px;
+}
 
-        .submit-btn:hover {
-            background: #1d2935;
-        }
+/* CARD DESCRIPTION */
+.card-desc {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* CONTACT EMBED SECTION */
+.contact-container {
+    margin-top: 70px;
+    text-align: center;
+}
+
+/* CONTACT FORM IFRAME */
+iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 90px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    iframe {
+        height: 750px;
+    }
+}

@@ -1,36 +1,67 @@
-<% pageCSS = ['Help.css']; %>
+<% pageCSS = ['help']; %>
 <div class="container">
-        <div class="content-card" id="card">
-            <h2 class="mission-title">Contact Us</h2>
-            <p class="mission-text">
-                Have questions, feedback, or suggestions? We'd love to hear from you!
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Help & Support</h1>
+            <p>How can we assist you today?</p>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+            <input type="text" placeholder="Search FAQs (e.g., How to upload a report?)">
+        </div>
+
+        <!-- SUPPORT CARDS -->
+        <div class="grid">
+
+            <div class="card" onclick="window.location.href='accountSettings.html'">
+                <div class="card-icon">👤</div>
+                <div class="card-title">Account</div>
+                <div class="card-desc">Profile & settings</div>
+            </div>
+
+            <div class="card" onclick="window.location.href='tracking.html'">
+                <div class="card-icon">📍</div>
+                <div class="card-title">Tracking</div>
+                <div class="card-desc">Medical record access</div>
+            </div>
+
+            <div class="card" onclick="window.location.href='ecoTools.html'">
+                <div class="card-icon">⏱️</div>
+                <div class="card-title">Tools</div>
+                <div class="card-desc">Guides & features</div>
+            </div>
+
+            <div class="card" onclick="window.location.href='dataPrivacy.html'">
+                <div class="card-icon">🛡️</div>
+                <div class="card-title">Data & Privacy</div>
+                <div class="card-desc">Usage & policy</div>
+            </div>
+
+            <div class="card" onclick="window.location.href='faqs.html'">
+                <div class="card-icon">❓</div>
+                <div class="card-title">FAQs</div>
+                <div class="card-desc">Common questions</div>
+            </div>
+
+            <div class="card" onclick="document.getElementById('contactSection').scrollIntoView({behavior:'smooth'})">
+                <div class="card-icon">📞</div>
+                <div class="card-title">Contact Us</div>
+                <div class="card-desc">We’re here to help</div>
+            </div>
+
+        </div>
+
+        <!-- EMBED CONTACT US FORM -->
+        <div class="contact-container" id="contactSection">
+            <h2 style="font-weight:700; margin-bottom:15px; color:#2c3e50;">Contact Support</h2>
+            <p style="color:#777; margin-bottom:20px;">
+                Fill the form below and our MediVault support team will respond soon.
             </p>
 
-            <h2 class="content-title">Get in Touch</h2>
-            <p class="content-text">Fill out the form below and our team will get back to you as soon as possible.</p>
-
-            <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="Your Name" class="input-field" required />
-                <input type="email" placeholder="Your Email" class="input-field" required />
-                <textarea placeholder="Your Message" class="textarea-field" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            <!-- Embed existing Contact Us file -->
+            <iframe src="/contact"></iframe>
         </div>
+
     </div>
-
-        <script>
-        function toggleFAQ(element) {
-            const isOpen = element.classList.contains("open");
-
-            // Option 1: Close all others (accordion behavior)
-            document.querySelectorAll(".faq").forEach(faq => {
-                if (faq !== element) {
-                    faq.classList.remove("open");
-                }
-            });
-
-            // Toggle current
-            element.classList.toggle("open");
-
-        }
-    </script>

@@ -192,6 +192,13 @@ router.get("/help", (req, res) => {
     currentUser: req.session.user
   });
 });
+router.get("/contact", (req, res) => {
+  res.render("contact", {
+    title: "Contact",
+    pageCSS: ["contact"],
+    currentUser: req.session.user
+  });
+});
 
 
 module.exports = router;
