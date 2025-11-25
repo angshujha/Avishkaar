@@ -1,6 +1,7 @@
-# 🌐 Secure Patient-Centric Electronic Health Record (EHR) System
+# 🌐 MedVault – Patient-Centric Electronic Health Record (EHR) System
 
-A modern, cloud-based EHR platform where **patients own their data**, doctors receive **secure temporary access**, and **prescriptions are auto-parsed** using AI/OCR. Includes an emergency mode, smart chatbot, and a patient-controlled medical vault.
+MedVault solves the problem of disorganized and inaccessible health records by empowering patients to centrally *manage*, *organize*, and *securely share* their medical data. The system includes an automated *prescription parser* that extracts and structures prescription details, provides *temporary access privileges* for healthcare providers, integrates *emergency response features*, offers *intelligent assistance*, and enables streamlined *QR/OTP-based sharing* for seamless and controlled access.
+
 
 ---
 
@@ -87,6 +88,49 @@ Your own **secure medical library**.
 
 ### ☁️ Optional Storage
 - Firebase Storage / AWS S3  
+
+---
+
+## 🚀 Server Setup
+
+Follow these steps to run the backend server locally:
+
+---
+
+### 1️⃣ Clone the Repository
+
+```sh
+git clone https://github.com/yourusername/AVISHKAAR.git
+cd AVISHKAAR
+
+
+### 2️⃣ Install All Dependencies
+npm install
+
+### 3️⃣ Create a .env File
+
+Add the following to .env:
+
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+SESSION_SECRET=your_session_secret
+
+
+⚠️ Do NOT upload .env to GitHub.
+
+### 4️⃣ Start the Server
+node app.js
+
+
+or (if using nodemon):
+
+nodemon app.js
+
+### 5️⃣ Open in Browser
+http://localhost:3000
+
+
+Your backend server will now be running successfully.
 
 ---
 
